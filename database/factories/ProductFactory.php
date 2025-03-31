@@ -32,6 +32,7 @@ class ProductFactory extends Factory
             'price' => fake()->randomFloat(2, 10, 999),
             'cover_image' => $coverImage,
             'images' => $gallery,
+            'category_id' => fake()->numberBetween(1, 8),
         ];
     }
 }
