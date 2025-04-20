@@ -1,3 +1,5 @@
+@include('partials.header')
+
 <h1>Products</h1>
 <a href="{{ route('products.create') }}">Create new product</a>
 

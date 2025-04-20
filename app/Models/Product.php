@@ -22,7 +22,7 @@ class Product extends Model
         'images' => 'array',
     ];
 
-    public function categories(): BelongsTo
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }

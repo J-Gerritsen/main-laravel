@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
@@ -82,4 +83,15 @@ class ProductService
     {
         Storage::disk('public')->delete($path);
     }
+
+    public function getProductsGroupedByCategory(): Collection
+    {
+        return Category::with('products')->get();
+    }
+
+    public function findCategory(int $id): ?Product
+    {
+        return Product::with('category')->find($id);
+    }
+
 }
