@@ -56,4 +56,11 @@ class User extends Authenticatable
     {
         return $this->role()->name === $name;
     }
+
+    public function cart()
+    {
+        return $this->belongsToMany(Product::class, 'cart_product')
+            ->withPivot('quantity')
+            ->withTimestamps();
+    }
 }

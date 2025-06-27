@@ -21,6 +21,15 @@
             <p>No additional images available.</p>
         @endif
     </div>
+    <div>
+        <h2>Add to Cart</h2>
+        <form action="{{ route('cart.add', $product) }}" method="POST">
+            @csrf
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" id="quantity" value="1" min="1">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
 
     <a href="{{ route('products.store') }}">Back to Products</a>
 </div>
