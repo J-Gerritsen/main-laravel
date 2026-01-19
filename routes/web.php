@@ -25,7 +25,7 @@ Route::middleware(['auth', 'role:Admin,Moderator'])->group(function () {
     Route::resource('products', ProductController::class)->except(['show']);
 });
 
-Route::get('/store', [ProductController::class, 'byCategory'])->name('products.store');
+Route::get('/store', [ProductController::class, 'byCategory'])->name('products.byCategory');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
 
 Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.form');
